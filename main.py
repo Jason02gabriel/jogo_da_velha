@@ -52,38 +52,61 @@ pontuacao_o.place(x=135, y=20)
 
 #configurar o frame de baixo
 
-#linhas verticais
-app_linha1 = Label(frame_baixo, text="", height=23,pady=5,relief= 'flat' ,font=("Ivy 5 bold"), bg=co0, fg=co0)
-app_linha1.place(x=80, y=15)
-app_linha2 = Label(frame_baixo, text="", height=23,pady=5,relief= 'flat' ,font=("Ivy 5 bold"), bg=co0, fg=co0)
-app_linha2.place(x=147, y=15)
 
-#linhas horizontais
-app_linha3 = Label(frame_baixo, text="", width=61,padx=2,relief= 'flat' ,font=("Ivy 4 bold"), bg=co0, fg=co0)
-app_linha3.place(x=20, y=63)
-app_linha4 = Label(frame_baixo, text="", width=61,padx=2,relief= 'flat' ,font=("Ivy 4 bold" ), bg=co0, fg=co0)
-app_linha4.place(x=20, y=123)
 
-#botoões da primeira linha
-botao1 = Button(frame_baixo, text="", width=3 ,font=("Ivy 20 bold"),overrelief=RIDGE, bg=fundo, fg=co0)
-botao1.place(x=20, y=15)
-botao2 = Button(frame_baixo, text="", width=3 ,font=("Ivy 20 bold"),overrelief=RIDGE, bg=fundo, fg=co0)
-botao2.place(x=86, y=15)
-botao3 = Button(frame_baixo, text="", width=3 ,font=("Ivy 20 bold"),overrelief=RIDGE, bg=fundo, fg=co0)
-botao3.place(x=152, y=15)
-#botões da segunda linha
-botao4 = Button(frame_baixo, text="", width=3 ,font=("Ivy 20 bold"),overrelief=RIDGE, bg=fundo, fg=co0)
-botao4.place(x=20, y=75)
-bota5 = Button(frame_baixo, text="", width=3 ,font=("Ivy 20 bold"),overrelief=RIDGE, bg=fundo, fg=co0)
-bota5.place(x=86, y=75)
-botao6 = Button(frame_baixo, text="", width=3 ,font=("Ivy 20 bold"),overrelief=RIDGE, bg=fundo, fg=co0)
-botao6.place(x=152, y=75)
-#botões da 3 linha
-botao7 = Button(frame_baixo, text="", width=3 ,font=("Ivy 20 bold"),overrelief=RIDGE, bg=fundo, fg=co0)
-botao7.place(x=20, y=135)
-botao8 = Button(frame_baixo, text="", width=3 ,font=("Ivy 20 bold"),overrelief=RIDGE, bg=fundo, fg=co0)
-botao8.place(x=86, y=135)
-botao9 = Button(frame_baixo, text="", width=3 ,font=("Ivy 20 bold"),overrelief=RIDGE, bg=fundo, fg=co0)
-botao9.place(x=152, y=135)
+def inicia_jogo():
+    pass
+    # linhas verticais
+    app_linha1 = Label(frame_baixo, text="", height=23, pady=5, relief='flat', font=("Ivy 5 bold"), bg=co0, fg=co0)
+    app_linha1.place(x=80, y=15)
+    app_linha2 = Label(frame_baixo, text="", height=23, pady=5, relief='flat', font=("Ivy 5 bold"), bg=co0, fg=co0)
+    app_linha2.place(x=147, y=15)
+
+    # linhas horizontais
+    app_linha3 = Label(frame_baixo, text="", width=61, padx=2, relief='flat', font=("Ivy 4 bold"), bg=co0, fg=co0)
+    app_linha3.place(x=20, y=63)
+    app_linha4 = Label(frame_baixo, text="", width=61, padx=2, relief='flat', font=("Ivy 4 bold"), bg=co0, fg=co0)
+    app_linha4.place(x=20, y=123)
+
+    # botoões da primeira linha
+    botao1 = Button(frame_baixo, text="", width=3, font=("Ivy 20 bold"), overrelief=RIDGE, bg=fundo, fg=co0)
+    botao1.place(x=20, y=15)
+    botao2 = Button(frame_baixo, text="", width=3, font=("Ivy 20 bold"), overrelief=RIDGE, bg=fundo, fg=co0)
+    botao2.place(x=86, y=15)
+    botao3 = Button(frame_baixo, text="", width=3, font=("Ivy 20 bold"), overrelief=RIDGE, bg=fundo, fg=co0)
+    botao3.place(x=152, y=15)
+    # botões da segunda linha
+    botao4 = Button(frame_baixo, text="", width=3, font=("Ivy 20 bold"), overrelief=RIDGE, bg=fundo, fg=co0)
+    botao4.place(x=20, y=75)
+    bota5 = Button(frame_baixo, text="", width=3, font=("Ivy 20 bold"), overrelief=RIDGE, bg=fundo, fg=co0)
+    bota5.place(x=86, y=75)
+    botao6 = Button(frame_baixo, text="", width=3, font=("Ivy 20 bold"), overrelief=RIDGE, bg=fundo, fg=co0)
+    botao6.place(x=152, y=75)
+    # botões da 3 linha
+    botao7 = Button(frame_baixo, text="", width=3, font=("Ivy 20 bold"), overrelief=RIDGE, bg=fundo, fg=co0)
+    botao7.place(x=20, y=135)
+    botao8 = Button(frame_baixo, text="", width=3, font=("Ivy 20 bold"), overrelief=RIDGE, bg=fundo, fg=co0)
+    botao8.place(x=86, y=135)
+    botao9 = Button(frame_baixo, text="", width=3, font=("Ivy 20 bold"), overrelief=RIDGE, bg=fundo, fg=co0)
+    botao9.place(x=152, y=135)
+
+
+
+    def verifica_vencedor():
+        pass
+
+    def finaliza_jogo():
+        pass
+
+#botão inicia jogo
+botao_inicia = Button(frame_baixo,command=inicia_jogo,text="Iniciar", width=10 ,font=("Ivy 10 bold"),overrelief=RIDGE, bg=fundo, fg=co0)
+botao_inicia.place(x=75, y=210)
+
+
+
+
+
+
+
 
 janela.mainloop()
