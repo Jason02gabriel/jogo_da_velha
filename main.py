@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import ttk
-
+#
 # cores ---------------------------------------
 co0 = "#FFFFFF"  # branca / white
 co1 = "#333333"  # preta pesado / dark black
