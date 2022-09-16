@@ -66,6 +66,7 @@ contador = 0
 jogar = ''
 contador_rodadas = 0
 def inicia_jogo():
+    botao_inicia.place(x=800, y=200)
 
     #controlar o jogo
     def controlar_jogo(i):
@@ -574,6 +575,7 @@ def inicia_jogo():
         contador_rodadas = 0
         score_1 = 0
         score_2 = 0
+        contador = 0
         # bloquear os botoes
         botao1['state'] = 'disable'
         botao2['state'] = 'disable'
@@ -638,12 +640,5 @@ def inicia_jogo():
 #botão inicia jogo
 botao_inicia = Button(frame_baixo,command=inicia_jogo,text="Iniciar", width=10 ,font=("Ivy 10 bold"),overrelief=RIDGE, bg=fundo, fg=co0)
 botao_inicia.place(x=75, y=200)
-
-
-
-
-
-
-
 
 janela.mainloop()
