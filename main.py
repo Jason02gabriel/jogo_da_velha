@@ -64,11 +64,12 @@ tabela = [[1,2,3],[4,5,6],[7,8,9]]
 jogando = 'X'
 contador = 0
 jogar = ''
-
+contador_rodadas = 0
 def inicia_jogo():
 
     #controlar o jogo
     def controlar_jogo(i):
+        global tabela
         global jogando
         global contador
         global jogar
@@ -491,16 +492,117 @@ def inicia_jogo():
 
     #verificar quem ganhou
     def verifica_vencedor(i):
-        pass
+
+        global tabela
+        global score_1
+        global score_2
+        global contador_rodadas
+        global contador
+        #bloquear os botoes
+        botao1['state'] = 'disable'
+        botao2['state'] = 'disable'
+        botao3['state'] = 'disable'
+        botao4['state'] = 'disable'
+        botao5['state'] = 'disable'
+        botao6['state'] = 'disable'
+        botao7['state'] = 'disable'
+        botao8['state'] = 'disable'
+        botao9['state'] = 'disable'
+
+        app_vencedor = Label(frame_baixo, text='', font=('Arial', 15), bg=co4)
+        app_vencedor.place(x=50, y=235)
 
 
+
+        if i == 'X':
+            score_2 += 1
+            app_vencedor['text'] = 'Player 2 venceu'
+            pontuacao_o['text'] = score_2
+        if i == 'O':
+            score_1 += 1
+            app_vencedor['text'] = 'Player 1 venceu'
+            pontuacao_x['text'] = score_1
+        if i == 'velha':
+            app_vencedor['text'] = 'Deu velha'
+        def start():
+            # limpando os botoes
+            botao1['text'] = ''
+            botao2['text'] = ''
+            botao3['text'] = ''
+            botao4['text'] = ''
+            botao5['text'] = ''
+            botao6['text'] = ''
+            botao7['text'] = ''
+            botao8['text'] = ''
+            botao9['text'] = ''
+
+            botao1['state'] = 'normal'
+            botao2['state'] = 'normal'
+            botao3['state'] = 'normal'
+            botao4['state'] = 'normal'
+            botao5['state'] = 'normal'
+            botao6['state'] = 'normal'
+            botao7['state'] = 'normal'
+            botao8['state'] = 'normal'
+            botao9['state'] = 'normal'
+            app_vencedor.destroy()
+            botao_inicia.destroy()
+
+        botao_inicia = Button(frame_baixo, command=start, text="Proxima Rodada", width=15, font=("Ivy 10 bold"),overrelief=RIDGE, bg=fundo, fg=co0)
+        botao_inicia.place(x=58, y=200)
+
+        def game_over():
+            botao_inicia.destroy()
+            app_vencedor.destroy()
+
+            finaliza_jogo()
+        if contador_rodadas >= 5:
+            game_over()
+        else:
+            contador_rodadas += 1
+            tabela = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+            contador = 0
     #terminar o jogo
     def finaliza_jogo():
-        pass
+        global contador_rodadas
+        global contador
+        global tabela
+        global score_1
+        global score_2
+
+        tabela = [[1,2,3],[4,5,6],[7,8,9]]
+        contador_rodadas = 0
+        score_1 = 0
+        score_2 = 0
+        # bloquear os botoes
+        botao1['state'] = 'disable'
+        botao2['state'] = 'disable'
+        botao3['state'] = 'disable'
+        botao4['state'] = 'disable'
+        botao5['state'] = 'disable'
+        botao6['state'] = 'disable'
+        botao7['state'] = 'disable'
+        botao8['state'] = 'disable'
+        botao9['state'] = 'disable'
+        app_gameover = Label(frame_baixo, text='Game Over', font=('Arial', 15), bg=co4)
+        app_gameover.place(x=25, y=90)
+
+        #jogar novamente
+        def jogar_novamente():
+            pontuacao_o['text'] = '0'
+            pontuacao_x['text'] = '0'
+            app_gameover.destroy()
+            botao_inicia.destroy()
+
+            #chamar função para iniciar o jogo
+            inicia_jogo()
+
+
+        botao_inicia = Button(frame_baixo, command=jogar_novamente, text="Jogar Novamente", width=10, font=("Ivy 10 bold"),overrelief=RIDGE, bg=fundo, fg=co0)
+        botao_inicia.place(x=75, y=200)
 
 
         # linhas verticais
-
     app_linha1 = Label(frame_baixo, text="", height=23, pady=5, relief='flat', font=("Ivy 5 bold"), bg=co0, fg=co0)
     app_linha1.place(x=80, y=15)
     app_linha2 = Label(frame_baixo, text="", height=23, pady=5, relief='flat', font=("Ivy 5 bold"), bg=co0, fg=co0)
@@ -535,7 +637,7 @@ def inicia_jogo():
     botao9.place(x=152, y=135)
 #botão inicia jogo
 botao_inicia = Button(frame_baixo,command=inicia_jogo,text="Iniciar", width=10 ,font=("Ivy 10 bold"),overrelief=RIDGE, bg=fundo, fg=co0)
-botao_inicia.place(x=75, y=210)
+botao_inicia.place(x=75, y=200)
 
 
 
